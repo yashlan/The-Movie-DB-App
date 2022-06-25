@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+  ~ Last modified 6/25/22, 3:54 PM
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yashlan.androidexpertsub1">
 
@@ -10,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidExpertSub1">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainBottomNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
