@@ -1,3 +1,8 @@
+/*
+ * Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+ * Last modified 6/25/22, 2:08 PM
+ */
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -14,3 +19,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Android Expert Sub 1"
 include ':app'
+include ':core'
