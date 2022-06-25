@@ -1,2 +1,4 @@
 com.yashlan.core
+id ivPoster
+id tvTitle
 layout item_list_movie
