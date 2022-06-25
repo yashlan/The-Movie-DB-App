@@ -1,3 +1,5 @@
 R_DEF: Internal format may change without notice
 local
+id ivPoster
+id tvTitle
 layout item_list_movie
