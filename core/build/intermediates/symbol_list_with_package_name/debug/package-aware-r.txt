@@ -1,0 +1,2 @@
+com.yashlan.core
+layout item_list_movie

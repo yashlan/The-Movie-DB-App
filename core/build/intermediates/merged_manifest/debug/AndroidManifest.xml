@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+  ~ Last modified 6/25/22, 2:08 PM
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yashlan.core" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+</manifest>
