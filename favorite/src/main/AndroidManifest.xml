@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/26/22, 9:52 PM
+  ~ Last modified 6/26/22, 9:26 PM
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yashlan.favorite">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_favorite">
+        <dist:delivery>
+            <dist:install-time />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application tools:ignore="MissingApplicationIcon">
+        <activity android:name=".WebViewFavoriteMovie"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="movieapp"
+                    android:host="favorite"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
