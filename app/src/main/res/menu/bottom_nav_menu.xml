@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+  ~ Last modified 6/25/22, 3:54 PM
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_movie_filter_24_black"
+        android:onClick="onClickHome"
+        android:title="@string/discover" />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_baseline_favorite_24_black"
+        android:onClick="onClickFavorite"
+        android:title="@string/favorite" />
+
+</menu>
