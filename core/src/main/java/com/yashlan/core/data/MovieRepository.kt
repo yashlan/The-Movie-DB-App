@@ -30,7 +30,7 @@ class MovieRepository(
                 }
             }
 
-            override fun shouldFetch(data: List<Movie>?): Boolean = true
+            override fun shouldFetch(data: List<Movie>?): Boolean = data.isNullOrEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<MovieResponse.Results>>> =
                 remoteDataSource.getAllMovie()
