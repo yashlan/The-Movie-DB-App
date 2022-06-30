@@ -13,7 +13,7 @@ object DataMapper {
     fun mapResponsesToEntities(input: List<MovieResponse.Results>): List<MovieEntity> {
         val movieList = ArrayList<MovieEntity>()
         input.map {
-            val tourism = MovieEntity(
+            val movie = MovieEntity(
                 movieId = it.movieId,
                 title = it.title,
                 releaseDate = it.releaseDate,
@@ -21,7 +21,7 @@ object DataMapper {
                 posterPath = it.posterPath,
                 isFavorite = false
             )
-            movieList.add(tourism)
+            movieList.add(movie)
         }
         return movieList
     }
