@@ -1,0 +1,39 @@
+/*
+ * Created by Muhammad Yashlan Iskandar on 6/26/22, 9:26 PM
+ * Last modified 6/26/22, 9:26 PM
+ */
+
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":app")
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}
