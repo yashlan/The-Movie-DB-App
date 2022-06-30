@@ -1,3 +1,16 @@
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+  ~ Last modified 6/25/22, 3:54 PM
+  -->
+
 <resources>
     <string name="app_name">The Movie DB</string>
+    <string name="title_home">Discover Movies</string>
+    <string name="title_favorite">Favorite Movies</string>
+    <string name="exit_info">Press Again To Exit</string>
+    <string name="discover">Discover</string>
+    <string name="favorite">Favorite</string>
+    <string name="overview">Overview</string>
+    <string name="see_more_details_on_website">See More Details On Website</string>
+    <string name="empty_list_message">No favorite movies added yet</string>
 </resources>
