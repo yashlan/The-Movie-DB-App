@@ -19,6 +19,6 @@ class LocalDataSource(private val movieDao: MovieDao) {
 
     fun setFavoriteMovie(movie: MovieEntity, newState: Boolean) {
         movie.isFavorite = newState
-        movieDao.updateFavoriteMovie(movie)
+        movieDao.updateFavoriteMovie(movie.movieId, movie.isFavorite)
     }
 }
