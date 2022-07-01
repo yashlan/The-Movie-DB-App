@@ -4,7 +4,6 @@
   ~ Last modified 6/25/22, 2:08 PM
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yashlan.core">
+<manifest package="com.yashlan.core">
 
 </manifest>

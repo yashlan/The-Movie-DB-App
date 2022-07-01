@@ -5,14 +5,9 @@
 
 <resources>
     <string name="app_name">The Movie DB</string>
-    <string name="title_home">Discover Movies</string>
-    <string name="title_favorite">Favorite Movies</string>
-    <string name="exit_info">Press Again To Exit</string>
     <string name="discover">Discover</string>
-    <string name="favorite">Favorite</string>
     <string name="overview">Overview</string>
     <string name="see_more_details_on_website">See More Details On Website</string>
-    <string name="empty_list_message">No favorite movies added yet</string>
     <string name="title_activity_settings">Setting</string>
 
     <!-- Preference Keys -->
@@ -26,6 +21,5 @@
     <string name="dark_mode_auto">Automatic</string>
     <string name="dark_mode_on">Dark mode</string>
     <string name="dark_mode_off">Light mode</string>
-    <string name="added_to_favorite">Added to favorite!</string>
 
 </resources>
