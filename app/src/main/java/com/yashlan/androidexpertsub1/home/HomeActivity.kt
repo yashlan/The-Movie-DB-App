@@ -1,63 +1,114 @@
 /*
- * Created by Muhammad Yashlan Iskandar on 7/1/22, 7:32 PM
- * Last modified 7/1/22, 7:32 PM
+ * Created by Muhammad Yashlan Iskandar on 7/1/22, 7:46 PM
+ * Last modified 7/1/22, 7:46 PM
  */
 
 package com.yashlan.androidexpertsub1.home
 
+import android.content.Intent
+import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import com.yashlan.androidexpertsub1.R
-import com.yashlan.androidexpertsub1.databinding.ActivityMainBinding
+import com.yashlan.androidexpertsub1.databinding.ActivityHomeBinding
+import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
+import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
+import com.yashlan.androidexpertsub1.setting.SettingsActivity
+import com.yashlan.core.data.Resource
+import com.yashlan.core.ui.MovieAdapter
+import com.yashlan.core.utils.forcePortraitScreenOrientation
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityHomeBinding
+    private val homeVieModel: HomeViewModel by viewModel()
+    private val detailMovieViewModel: DetailMovieViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        forcePortraitScreenOrientation()
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.appBarMain.toolbar)
-
-        binding.appBarMain.fab.setOnClickListener { view ->
-
+        val movieAdapter = MovieAdapter()
+        movieAdapter.onItemClick = {
+            val intent = Intent(this, DetailMovieActivity::class.java)
+            intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, it)
+            startActivity(intent)
         }
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+
+        movieAdapter.onFavButtonClick = { movie, isNotLiked ->
+            if (isNotLiked) {
+                detailMovieViewModel.setFavoriteMovie(movie, true)
+            } else {
+                detailMovieViewModel.setFavoriteMovie(movie, false)
+            }
+        }
+
+        homeVieModel.movie.observe(this) { movie ->
+            if (movie != null) {
+                when (movie) {
+                    is Resource.Loading -> {
+                        showLoading(true)
+                    }
+                    is Resource.Success -> {
+                        movieAdapter.setData(movie.data)
+                        showLoading(false)
+                    }
+                    is Resource.Error -> {
+                        binding.ivError.visibility = View.VISIBLE
+                        showLoading(false)
+                    }
+                }
+            }
+        }
+
+        binding.rvMovie.apply {
+            layoutManager = GridLayoutManager(context, 2)
+            setHasFixedSize(true)
+            adapter = movieAdapter
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_fav -> {
+                val uri = Uri.parse("moviesapp://favorite")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                true
+            }
+            R.id.action_setting -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        with(binding) {
+            if (isLoading) {
+                rvMovie.visibility = View.GONE
+                progressLoading.visibility = View.VISIBLE
+            } else {
+                rvMovie.visibility = View.VISIBLE
+                progressLoading.visibility = View.GONE
+            }
+        }
     }
 }

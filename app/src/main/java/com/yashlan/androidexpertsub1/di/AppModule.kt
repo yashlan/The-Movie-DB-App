@@ -6,7 +6,6 @@
 package com.yashlan.androidexpertsub1.di
 
 import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
-import com.yashlan.androidexpertsub1.favorite.FavoriteMovieViewModel
 import com.yashlan.androidexpertsub1.home.HomeViewModel
 import com.yashlan.core.domain.usecase.MovieInteractor
 import com.yashlan.core.domain.usecase.MovieUseCase
@@ -19,6 +18,5 @@ val useCaseModule = module {
 
 val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
-    viewModel { FavoriteMovieViewModel(get()) }
     viewModel { DetailMovieViewModel(get()) }
 }

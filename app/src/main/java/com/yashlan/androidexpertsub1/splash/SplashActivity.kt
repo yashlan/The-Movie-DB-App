@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.yashlan.androidexpertsub1.MainBottomNavActivity
 import com.yashlan.androidexpertsub1.R
+import com.yashlan.androidexpertsub1.home.HomeActivity
 import com.yashlan.core.utils.ThemeUtils
 import com.yashlan.core.utils.forcePortraitScreenOrientation
 import com.yashlan.core.utils.setFullscreen
@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
         ThemeUtils(this).getTheme()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainBottomNavActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }, DELAY)
     }

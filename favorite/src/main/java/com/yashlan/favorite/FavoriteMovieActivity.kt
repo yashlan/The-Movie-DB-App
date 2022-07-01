@@ -6,11 +6,13 @@
 package com.yashlan.favorite
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
-import com.yashlan.core.data.Resource
+import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.ui.MovieAdapter
 import com.yashlan.favorite.databinding.ActivityFavoriteMovieBinding
@@ -22,6 +24,7 @@ class FavoriteMovieActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoriteMovieBinding
     private val favoriteMovieViewModel: FavoriteMovieViewModel by viewModel()
+    private val detailMovieViewModel: DetailMovieViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +33,18 @@ class FavoriteMovieActivity : AppCompatActivity() {
 
         loadKoinModules(favoriteModule)
 
-        supportActionBar?.title = "Favorite"
+        supportActionBar?.title = getString(R.string.favorite)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        getFavorite()
+        getListFavorite()
     }
 
-    private fun getFavorite() {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        finish()
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun getListFavorite() {
         val movieAdapter = MovieAdapter()
         movieAdapter.onItemClick = {
             val intent = Intent(this, DetailMovieActivity::class.java)
@@ -45,24 +54,14 @@ class FavoriteMovieActivity : AppCompatActivity() {
 
         movieAdapter.onFavButtonClick = { movie, isNotLiked ->
             if (!isNotLiked) {
-               // detailMovieViewModel.setFavoriteMovie(movie, false)
+                detailMovieViewModel.setFavoriteMovie(movie, false)
             }
         }
 
-        favoriteMovieViewModel.favoriteMovie.observe(this) { listFav: List<Movie>? ->
-            if(listFav != null) {
-                when(listFav) {
-                    is Resource.Loading<*> -> {
-
-                    }
-                    is Resource.Success<*> -> {
-                        movieAdapter.setData(listFav)
-                    }
-                    is Resource.Error<*> -> {
-
-                    }
-                }
-            }
+        favoriteMovieViewModel.favoriteMovie.observe(this) { listFavorite: List<Movie>? ->
+            movieAdapter.setData(listFavorite)
+            binding.tvEmptyList.visibility =
+                if (listFavorite.isNullOrEmpty()) View.VISIBLE else View.GONE
         }
 
         binding.rvFavorite.apply {

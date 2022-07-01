@@ -13,6 +13,7 @@
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.16" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/drawable/logo_splash_screen.xml" value="0.16" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/activity_detail_movie.xml" value="0.264" />
+        <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/activity_home.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/activity_main.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/activity_main_bottom_nav.xml" value="0.264" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/activity_splash.xml" value="0.2" />
@@ -21,7 +22,9 @@
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/fragment_favorite_movie.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/fragment_home.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/fragment_notifications.xml" value="0.21927083333333333" />
+        <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/layout/settings_activity.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21927083333333333" />
+        <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/menu/setting_menu.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/app/src/main/res/xml/root_preferences.xml" value="0.21927083333333333" />
         <entry key="..\:/GitHub/AndroidExpertSub1/core/src/main/res/drawable/ic_baseline_favorite_24_black.xml" value="0.1485" />

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 6/25/22, 4:19 PM
+  ~ Last modified 6/25/22, 3:54 PM
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_fav"
+        android:icon="@drawable/ic_baseline_favorite_24_black"
+        app:showAsAction="always"
+        android:title="@string/discover" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/ic_baseline_movie_filter_24_black"
+        android:title="@string/title_activity_settings" />
+
+</menu>

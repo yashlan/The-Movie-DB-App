@@ -5,7 +5,7 @@
 
 package com.yashlan.favorite.di
 
-import com.yashlan.androidexpertsub1.favorite.FavoriteMovieViewModel
+import com.yashlan.favorite.FavoriteMovieViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

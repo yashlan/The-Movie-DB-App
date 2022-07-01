@@ -6,7 +6,6 @@
 package com.yashlan.androidexpertsub1.detail
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
@@ -14,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.like.LikeButton
 import com.like.OnLikeListener
 import com.yashlan.androidexpertsub1.databinding.ActivityDetailMovieBinding
+import com.yashlan.androidexpertsub1.detail.DetailWebViewMovie.Companion.MOVIE_ID_EXTRA
 import com.yashlan.core.BuildConfig
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.utils.forcePortraitScreenOrientation
@@ -36,10 +36,9 @@ class DetailMovieActivity : AppCompatActivity() {
         showDetailsMovie(movie)
 
         binding.btnOpenUrl.setOnClickListener {
-            it.startAnimation(AlphaAnimation(it.alpha, .5f))
-            val uri = Uri.parse("movieapp://favorite")
-            val i = Intent(Intent.ACTION_VIEW, uri)
-            i.putExtra("MOVIE_ID_EXTRA", movie?.movieId)
+            it.startAnimation(AlphaAnimation(it.alpha, .7f))
+            val i = Intent(this, DetailWebViewMovie::class.java)
+            i.putExtra(MOVIE_ID_EXTRA, movie?.movieId)
             startActivity(i)
         }
     }

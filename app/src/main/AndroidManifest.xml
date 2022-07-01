@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidExpertSub1">
         <activity
+            android:name=".home.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".setting.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings" />
@@ -20,7 +23,7 @@
             android:name=".detail.DetailMovieActivity"
             android:exported="false" />
         <activity
-            android:name=".MainBottomNavActivity"
+            android:name=".detail.DetailWebViewMovie"
             android:exported="false" />
         <activity
             android:name=".splash.SplashActivity"
