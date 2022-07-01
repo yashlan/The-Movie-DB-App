@@ -8,6 +8,7 @@ package com.yashlan.core.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -72,6 +73,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
 
         init {
             binding.root.setOnClickListener {
+                it.startAnimation(AlphaAnimation(it.alpha, .7f))
                 onItemClick?.invoke(oldListData[adapterPosition])
             }
         }

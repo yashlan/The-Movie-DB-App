@@ -7,18 +7,16 @@ package com.yashlan.androidexpertsub1.favorite
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yashlan.androidexpertsub1.databinding.FragmentFavoriteMovieBinding
 import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
 import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
-import com.yashlan.core.R
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.ui.MovieAdapter
-import com.yashlan.core.utils.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteMovieFragment : Fragment() {

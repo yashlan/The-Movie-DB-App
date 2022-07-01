@@ -12,14 +12,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.yashlan.core.R
 import com.yashlan.androidexpertsub1.databinding.FragmentHomeBinding
 import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
 import com.yashlan.androidexpertsub1.detail.DetailMovieActivity.Companion.EXTRA_MOVIE
 import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
 import com.yashlan.core.data.Resource
 import com.yashlan.core.ui.MovieAdapter
-import com.yashlan.core.utils.showToast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
@@ -52,7 +50,6 @@ class HomeFragment : Fragment() {
             movieAdapter.onFavButtonClick = { movie, isNotLiked ->
                 if (isNotLiked) {
                     detailMovieViewModel.setFavoriteMovie(movie, true)
-                    context?.showToast(R.string.added_to_favorite)
                 } else {
                     detailMovieViewModel.setFavoriteMovie(movie, false)
                 }

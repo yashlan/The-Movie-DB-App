@@ -13,6 +13,7 @@ import android.os.Handler
 import android.os.Looper
 import com.yashlan.androidexpertsub1.MainBottomNavActivity
 import com.yashlan.androidexpertsub1.R
+import com.yashlan.core.utils.ThemeUtils
 import com.yashlan.core.utils.forcePortraitScreenOrientation
 import com.yashlan.core.utils.setFullscreen
 
@@ -23,6 +24,8 @@ class SplashActivity : AppCompatActivity() {
         setFullscreen()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        ThemeUtils(this).getTheme()
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainBottomNavActivity::class.java))

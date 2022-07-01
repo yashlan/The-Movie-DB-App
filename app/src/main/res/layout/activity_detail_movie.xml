@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:scrollbars="vertical">
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,16 +40,16 @@
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/detail_ivPoster"
                     android:layout_alignBottom="@+id/detail_ivPoster"
-                    android:background="#32000000"
+                    android:background="#7F000000"
                     android:gravity="end"
                     android:orientation="vertical"
                     android:padding="2dp">
 
                     <com.like.LikeButton
                         android:id="@+id/detail_fav_button"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        app:icon_size="8dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:icon_size="12dp"
                         app:icon_type="heart"
                         app:like_drawable="@drawable/heart_on"
                         app:liked="false"
@@ -105,11 +105,10 @@
 
                     <TextView
                         android:id="@+id/detail_tvReleaseDate"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
-                        style="@style/TextAppearance.MaterialComponents.Subtitle2"
                         tools:text="Release : 02-02-2022" />
 
                     <TextView
@@ -126,6 +125,10 @@
                         android:textSize="20sp"
                         android:layout_height="wrap_content"
                         tools:text="@tools:sample/lorem/random" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
 
                 </LinearLayout>
 

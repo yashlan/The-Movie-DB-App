@@ -5,9 +5,11 @@
 
 package com.yashlan.androidexpertsub1
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +19,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.yashlan.androidexpertsub1.databinding.ActivityMainBottomNavBinding
+import com.yashlan.androidexpertsub1.setting.SettingsActivity
+import com.yashlan.core.utils.ThemeUtils
 import com.yashlan.core.utils.forcePortraitScreenOrientation
 import com.yashlan.core.utils.showToast
 
@@ -28,6 +32,7 @@ class MainBottomNavActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         forcePortraitScreenOrientation()
+        ThemeUtils(this).getTheme()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBottomNavBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,6 +53,23 @@ class MainBottomNavActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.setting_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.action_setting -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
     }
 
     override fun onBackPressed() {
