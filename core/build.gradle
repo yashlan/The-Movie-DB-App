@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         minSdk 21
-        targetSdk 31
+        targetSdk 32
 
         buildConfigField("String", "BASE_URL", BASE_URL)
         buildConfigField("String", "API_KEY_V3", API_KEY_V3)
