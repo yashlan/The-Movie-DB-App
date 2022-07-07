@@ -5,13 +5,16 @@
 
 package com.yashlan.androidexpertsub1.home
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yashlan.androidexpertsub1.R
 import com.yashlan.androidexpertsub1.databinding.ActivityHomeBinding
@@ -26,6 +29,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var broadcastReceiver: BroadcastReceiver
     private val homeVieModel: HomeViewModel by viewModel()
     private val detailMovieViewModel: DetailMovieViewModel by viewModel()
 
@@ -55,14 +59,16 @@ class HomeActivity : AppCompatActivity() {
                 when (movie) {
                     is Resource.Loading -> {
                         showLoading(true)
+                        binding.ivError.visibility = View.GONE
                     }
                     is Resource.Success -> {
                         movieAdapter.setData(movie.data)
                         showLoading(false)
+                        binding.ivError.visibility = View.GONE
                     }
                     is Resource.Error -> {
-                        binding.ivError.visibility = View.VISIBLE
                         showLoading(false)
+                        binding.ivError.visibility = View.VISIBLE
                     }
                 }
             }
@@ -88,7 +94,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_fav -> {
-                val uri = Uri.parse("moviesapp://favorite")
+                val uri = Uri.parse("movies://favorite")
                 startActivity(Intent(Intent.ACTION_VIEW, uri))
                 true
             }
@@ -110,5 +116,29 @@ class HomeActivity : AppCompatActivity() {
                 progressLoading.visibility = View.GONE
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        registerBroadCastReceiver()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(broadcastReceiver)
+    }
+
+    private fun registerBroadCastReceiver() {
+        broadcastReceiver = object : BroadcastReceiver() {
+            override fun onReceive(p0: Context?, p1: Intent?) {
+
+            }
+        }
+        val intentFilter = IntentFilter()
+        intentFilter.apply {
+            addAction(Intent.ACTION_POWER_CONNECTED)
+            addAction(Intent.ACTION_POWER_DISCONNECTED)
+        }
+        registerReceiver(broadcastReceiver, intentFilter)
     }
 }
