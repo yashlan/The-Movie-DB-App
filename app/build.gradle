@@ -56,5 +56,7 @@ dependencies {
 
     //import project module core
     implementation project(":core")
+    //custom lint
+    lintChecks project(':lint')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }

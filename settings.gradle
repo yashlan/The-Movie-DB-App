@@ -22,3 +22,4 @@ rootProject.name = "Android Expert Sub 1"
 include ':app'
 include ':core'
 include ':favorite'
+include ':lint'
