@@ -19,6 +19,11 @@ android {
         minSdk 21
         targetSdk 32
 
+        buildConfigField("String", "PIN_SHA256_1", PIN_SHA256_1)
+        buildConfigField("String", "PIN_SHA256_2", PIN_SHA256_2)
+        buildConfigField("String", "PIN_SHA256_3", PIN_SHA256_3)
+
+        buildConfigField("String", "HOST_URL", HOST_URL)
         buildConfigField("String", "BASE_URL", BASE_URL)
         buildConfigField("String", "API_KEY_V3", API_KEY_V3)
         buildConfigField("String", "IMAGE_DETAIL_URL", IMAGE_DETAIL_URL)

@@ -15,6 +15,7 @@ import com.yashlan.core.data.source.remote.RemoteDataSource
 import com.yashlan.core.data.source.remote.network.ApiService
 import com.yashlan.core.domain.repository.IMovieRepository
 import com.yashlan.core.utils.AppExecutors
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -36,6 +37,11 @@ val databaseModule = module {
 
 val networkModule = module {
     single {
+        val certificatePinner = CertificatePinner.Builder()
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_1)
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_2)
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_3)
+            .build()
         OkHttpClient.Builder()
             .addInterceptor(
                 HttpLoggingInterceptor().setLevel(
@@ -47,6 +53,7 @@ val networkModule = module {
             )
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
+            .certificatePinner(certificatePinner)
             .build()
     }
     single {
