@@ -56,5 +56,10 @@ android {
 }
 
 dependencies {
+
+    //encrypt
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
 }
