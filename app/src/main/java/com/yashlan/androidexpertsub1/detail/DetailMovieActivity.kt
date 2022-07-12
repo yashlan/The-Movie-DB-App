@@ -16,8 +16,7 @@ import com.yashlan.androidexpertsub1.databinding.ActivityDetailMovieBinding
 import com.yashlan.androidexpertsub1.detail.DetailWebViewMovie.Companion.MOVIE_ID_EXTRA
 import com.yashlan.core.BuildConfig
 import com.yashlan.core.domain.model.Movie
-import com.yashlan.core.utils.forcePortraitScreenOrientation
-import com.yashlan.core.utils.setFullscreen
+import com.yashlan.core.utils.ScreenUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailMovieActivity : AppCompatActivity() {
@@ -26,8 +25,8 @@ class DetailMovieActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailMovieBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        forcePortraitScreenOrientation()
-        setFullscreen()
+        ScreenUtil.forcePortraitScreenOrientation(this)
+        ScreenUtil.setFullscreen(this)
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
