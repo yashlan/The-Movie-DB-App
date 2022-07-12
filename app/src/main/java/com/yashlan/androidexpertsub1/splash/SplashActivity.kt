@@ -13,15 +13,14 @@ import android.os.Handler
 import android.os.Looper
 import com.yashlan.androidexpertsub1.R
 import com.yashlan.androidexpertsub1.home.HomeActivity
+import com.yashlan.core.utils.ScreenUtil
 import com.yashlan.core.utils.ThemeUtils
-import com.yashlan.core.utils.forcePortraitScreenOrientation
-import com.yashlan.core.utils.setFullscreen
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        forcePortraitScreenOrientation()
-        setFullscreen()
+        ScreenUtil.forcePortraitScreenOrientation(this)
+        ScreenUtil.setFullscreen(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
