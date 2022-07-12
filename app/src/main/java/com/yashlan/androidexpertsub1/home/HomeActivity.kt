@@ -23,7 +23,7 @@ import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
 import com.yashlan.androidexpertsub1.setting.SettingsActivity
 import com.yashlan.core.data.Resource
 import com.yashlan.core.ui.MovieAdapter
-import com.yashlan.core.utils.forcePortraitScreenOrientation
+import com.yashlan.core.utils.ScreenUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
     private val detailMovieViewModel: DetailMovieViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        forcePortraitScreenOrientation()
+        ScreenUtil.forcePortraitScreenOrientation(this)
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -128,17 +128,17 @@ class HomeActivity : AppCompatActivity() {
         unregisterReceiver(broadcastReceiver)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.rvMovie.adapter = null
+    }
+
     private fun registerBroadCastReceiver() {
         broadcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(p0: Context?, p1: Intent?) {
 
             }
         }
-        val intentFilter = IntentFilter()
-        intentFilter.apply {
-            addAction(Intent.ACTION_POWER_CONNECTED)
-            addAction(Intent.ACTION_POWER_DISCONNECTED)
-        }
-        registerReceiver(broadcastReceiver, intentFilter)
+        registerReceiver(broadcastReceiver, IntentFilter())
     }
 }
