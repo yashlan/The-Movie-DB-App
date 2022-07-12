@@ -15,6 +15,7 @@ import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
 import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.ui.MovieAdapter
+import com.yashlan.core.utils.ScreenUtil
 import com.yashlan.favorite.databinding.ActivityFavoriteMovieBinding
 import com.yashlan.favorite.di.favoriteModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -27,6 +28,7 @@ class FavoriteMovieActivity : AppCompatActivity() {
     private val detailMovieViewModel: DetailMovieViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        ScreenUtil.forcePortraitScreenOrientation(this)
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,6 +44,11 @@ class FavoriteMovieActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         finish()
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding.rvFavorite.adapter = null
     }
 
     private fun getListFavorite() {
