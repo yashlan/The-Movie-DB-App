@@ -34,7 +34,7 @@ val databaseModule = module {
         Room.databaseBuilder(
             androidContext(),
             MovieDatabase::class.java,
-            "Movies.db"
+            "Movies"
         ).fallbackToDestructiveMigration()
             .openHelperFactory(factory)
             .build()
