@@ -47,6 +47,9 @@ val networkModule = module {
             .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_1)
             .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_2)
             .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_3)
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_4)
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_5)
+            .add(BuildConfig.HOST_URL, BuildConfig.PIN_SHA256_6)
             .build()
         OkHttpClient.Builder()
             .addInterceptor(

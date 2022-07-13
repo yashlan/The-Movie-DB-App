@@ -22,6 +22,9 @@ android {
         buildConfigField("String", "PIN_SHA256_1", PIN_SHA256_1)
         buildConfigField("String", "PIN_SHA256_2", PIN_SHA256_2)
         buildConfigField("String", "PIN_SHA256_3", PIN_SHA256_3)
+        buildConfigField("String", "PIN_SHA256_4", PIN_SHA256_4)
+        buildConfigField("String", "PIN_SHA256_5", PIN_SHA256_5)
+        buildConfigField("String", "PIN_SHA256_6", PIN_SHA256_6)
 
         buildConfigField("String", "HOST_URL", HOST_URL)
         buildConfigField("String", "BASE_URL", BASE_URL)
