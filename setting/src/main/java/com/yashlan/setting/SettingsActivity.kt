@@ -13,10 +13,6 @@ package com.yashlan.setting
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.ListPreference
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
-import com.yashlan.core.utils.ThemeMode
 import com.yashlan.core.utils.ThemeUtils
 
 class SettingsActivity : AppCompatActivity() {
