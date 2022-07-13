@@ -3,7 +3,7 @@
  * Last modified 7/12/22, 5:19 PM
  */
 
-package com.yashlan.androidexpertsub1.utils
+package com.yashlan.androidexpertsub2.utils
 
 sealed class Result<out R> private constructor() {
     data class Success<out T>(val data: T) : Result<T>()

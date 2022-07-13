@@ -3,16 +3,16 @@
  * Last modified 7/12/22, 4:41 PM
  */
 
-package com.yashlan.androidexpertsub1.home
+package com.yashlan.androidexpertsub2.home
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import com.yashlan.androidexpertsub1.api.FakeApi
-import com.yashlan.androidexpertsub1.utils.DataSample
-import com.yashlan.androidexpertsub1.utils.LiveDataTestUtil.getOrAwaitValue
-import com.yashlan.androidexpertsub1.utils.MainCoroutineRule
-import com.yashlan.androidexpertsub1.utils.Result
-import com.yashlan.androidexpertsub1.viewmodel.FakeHomeViewModel
+import com.yashlan.androidexpertsub2.api.FakeApi
+import com.yashlan.androidexpertsub2.utils.DataSample
+import com.yashlan.androidexpertsub2.utils.LiveDataTestUtil.getOrAwaitValue
+import com.yashlan.androidexpertsub2.utils.MainCoroutineRule
+import com.yashlan.androidexpertsub2.utils.Result
+import com.yashlan.androidexpertsub2.viewmodel.FakeHomeViewModel
 import com.yashlan.core.data.source.local.entity.MovieEntity
 import com.yashlan.core.data.source.remote.network.ApiService
 import kotlinx.coroutines.ExperimentalCoroutinesApi

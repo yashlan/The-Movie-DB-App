@@ -3,7 +3,7 @@
  * Last modified 7/12/22, 6:15 PM
  */
 
-package com.yashlan.androidexpertsub1.utils
+package com.yashlan.androidexpertsub2.utils
 
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData

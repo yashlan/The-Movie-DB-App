@@ -3,7 +3,7 @@
  * Last modified 7/12/22, 4:47 PM
  */
 
-package com.yashlan.androidexpertsub1.utils
+package com.yashlan.androidexpertsub2.utils
 
 import com.yashlan.core.data.source.local.entity.MovieEntity
 import com.yashlan.core.data.source.remote.response.MovieResponse

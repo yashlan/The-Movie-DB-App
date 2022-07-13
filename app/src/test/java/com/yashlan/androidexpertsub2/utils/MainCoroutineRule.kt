@@ -3,7 +3,7 @@
  * Last modified 7/12/22, 8:09 PM
  */
 
-package com.yashlan.androidexpertsub1.utils
+package com.yashlan.androidexpertsub2.utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

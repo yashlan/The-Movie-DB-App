@@ -3,11 +3,11 @@
  * Last modified 7/12/22, 5:17 PM
  */
 
-package com.yashlan.androidexpertsub1.viewmodel
+package com.yashlan.androidexpertsub2.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
-import com.yashlan.androidexpertsub1.utils.Result
+import com.yashlan.androidexpertsub2.utils.Result
 import com.yashlan.core.data.source.local.entity.MovieEntity
 import com.yashlan.core.data.source.remote.network.ApiService
 
