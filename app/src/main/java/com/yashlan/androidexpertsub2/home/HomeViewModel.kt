@@ -3,7 +3,7 @@
  * Last modified 6/25/22, 4:03 PM
  */
 
-package com.yashlan.androidexpertsub1.home
+package com.yashlan.androidexpertsub2.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

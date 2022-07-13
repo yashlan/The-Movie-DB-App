@@ -3,7 +3,7 @@
  * Last modified 6/26/22, 12:29 AM
  */
 
-package com.yashlan.androidexpertsub1.detail
+package com.yashlan.androidexpertsub2.detail
 
 import androidx.lifecycle.ViewModel
 import com.yashlan.core.domain.model.Movie

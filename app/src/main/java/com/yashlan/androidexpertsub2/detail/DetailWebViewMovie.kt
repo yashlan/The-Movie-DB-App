@@ -3,7 +3,7 @@
  * Last modified 6/30/22, 9:30 PM
  */
 
-package com.yashlan.androidexpertsub1.detail
+package com.yashlan.androidexpertsub2.detail
 
 import android.annotation.SuppressLint
 import android.os.Bundle

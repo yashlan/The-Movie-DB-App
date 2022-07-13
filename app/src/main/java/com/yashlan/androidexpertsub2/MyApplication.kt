@@ -3,11 +3,11 @@
  * Last modified 6/26/22, 12:41 AM
  */
 
-package com.yashlan.androidexpertsub1
+package com.yashlan.androidexpertsub2
 
 import android.app.Application
-import com.yashlan.androidexpertsub1.di.useCaseModule
-import com.yashlan.androidexpertsub1.di.viewModelModule
+import com.yashlan.androidexpertsub2.di.useCaseModule
+import com.yashlan.androidexpertsub2.di.viewModelModule
 import com.yashlan.core.di.databaseModule
 import com.yashlan.core.di.networkModule
 import com.yashlan.core.di.repositoryModule

@@ -3,7 +3,7 @@
  * Last modified 7/1/22, 7:46 PM
  */
 
-package com.yashlan.androidexpertsub1.home
+package com.yashlan.androidexpertsub2.home
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -16,11 +16,10 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.yashlan.androidexpertsub1.R
-import com.yashlan.androidexpertsub1.databinding.ActivityHomeBinding
-import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
-import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
-import com.yashlan.androidexpertsub1.setting.SettingsActivity
+import com.yashlan.androidexpertsub2.R
+import com.yashlan.androidexpertsub2.databinding.ActivityHomeBinding
+import com.yashlan.androidexpertsub2.detail.DetailMovieActivity
+import com.yashlan.androidexpertsub2.detail.DetailMovieViewModel
 import com.yashlan.core.data.Resource
 import com.yashlan.core.ui.MovieAdapter
 import com.yashlan.core.utils.ScreenUtil
@@ -99,7 +98,8 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
             R.id.action_setting -> {
-                startActivity(Intent(this, SettingsActivity::class.java))
+                val uri = Uri.parse("movies://setting")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
                 true
             }
             else -> super.onOptionsItemSelected(item)

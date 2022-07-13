@@ -5,6 +5,11 @@
       <module name="Android_Expert_Sub_1.app" target="11" />
       <module name="Android_Expert_Sub_1.core" target="11" />
       <module name="Android_Expert_Sub_1.favorite" target="11" />
+      <module name="Android_Expert_Sub_1.setting" target="11" />
+      <module name="Android_Expert_Sub_2.app" target="11" />
+      <module name="Android_Expert_Sub_2.core" target="11" />
+      <module name="Android_Expert_Sub_2.favorite" target="11" />
+      <module name="Android_Expert_Sub_2.setting" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,7 +3,7 @@
  * Last modified 6/26/22, 12:29 AM
  */
 
-package com.yashlan.androidexpertsub1.detail
+package com.yashlan.androidexpertsub2.detail
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +12,8 @@ import android.view.animation.AlphaAnimation
 import com.bumptech.glide.Glide
 import com.like.LikeButton
 import com.like.OnLikeListener
-import com.yashlan.androidexpertsub1.databinding.ActivityDetailMovieBinding
-import com.yashlan.androidexpertsub1.detail.DetailWebViewMovie.Companion.MOVIE_ID_EXTRA
+import com.yashlan.androidexpertsub2.databinding.ActivityDetailMovieBinding
+import com.yashlan.androidexpertsub2.detail.DetailWebViewMovie.Companion.MOVIE_ID_EXTRA
 import com.yashlan.core.BuildConfig
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.utils.ScreenUtil

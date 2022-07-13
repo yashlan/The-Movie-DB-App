@@ -3,10 +3,10 @@
  * Last modified 6/26/22, 12:39 AM
  */
 
-package com.yashlan.androidexpertsub1.di
+package com.yashlan.androidexpertsub2.di
 
-import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
-import com.yashlan.androidexpertsub1.home.HomeViewModel
+import com.yashlan.androidexpertsub2.detail.DetailMovieViewModel
+import com.yashlan.androidexpertsub2.home.HomeViewModel
 import com.yashlan.core.domain.usecase.MovieInteractor
 import com.yashlan.core.domain.usecase.MovieUseCase
 import org.koin.androidx.viewmodel.dsl.viewModel

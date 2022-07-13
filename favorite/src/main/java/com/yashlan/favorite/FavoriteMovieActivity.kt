@@ -11,8 +11,8 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.yashlan.androidexpertsub1.detail.DetailMovieActivity
-import com.yashlan.androidexpertsub1.detail.DetailMovieViewModel
+import com.yashlan.androidexpertsub2.detail.DetailMovieActivity
+import com.yashlan.androidexpertsub2.detail.DetailMovieViewModel
 import com.yashlan.core.domain.model.Movie
 import com.yashlan.core.ui.MovieAdapter
 import com.yashlan.core.utils.ScreenUtil

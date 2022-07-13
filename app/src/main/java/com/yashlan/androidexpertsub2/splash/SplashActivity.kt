@@ -3,7 +3,7 @@
  * Last modified 6/25/22, 4:21 PM
  */
 
-package com.yashlan.androidexpertsub1.splash
+package com.yashlan.androidexpertsub2.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.yashlan.androidexpertsub1.R
-import com.yashlan.androidexpertsub1.home.HomeActivity
+import com.yashlan.androidexpertsub2.R
+import com.yashlan.androidexpertsub2.home.HomeActivity
 import com.yashlan.core.utils.ScreenUtil
 import com.yashlan.core.utils.ThemeUtils
 
