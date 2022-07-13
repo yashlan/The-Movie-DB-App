@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 7/13/22, 12:25 PM
+  ~ Last modified 7/13/22, 12:18 PM
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yashlan.setting">
+
+    <dist:module
+        dist:instant="false"
+        dist:title="@string/title_setting">
+        <dist:delivery>
+            <dist:install-time />
+        </dist:delivery>
+        <dist:fusing dist:include="true" />
+    </dist:module>
+
+    <application tools:ignore="MissingApplicationIcon">
+        <activity
+            android:name="com.yashlan.setting.SettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="setting"
+                    android:scheme="movies" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

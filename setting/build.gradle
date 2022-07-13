@@ -1,0 +1,38 @@
+/*
+ * Created by Muhammad Yashlan Iskandar on 7/13/22, 12:18 PM
+ * Last modified 7/13/22, 12:18 PM
+ */
+
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdkVersion 32
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":app")
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}

@@ -64,6 +64,9 @@ dependencies {
     //like button anim
     implementation "com.github.jd-alexander:LikeButton:$like_button_version"
 
+    //preference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
     //koin
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"

@@ -18,8 +18,9 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Android Expert Sub 1"
+rootProject.name = "Android Expert Sub 2"
 include ':app'
 include ':core'
 include ':favorite'
 include ':lint'
+include ':setting'

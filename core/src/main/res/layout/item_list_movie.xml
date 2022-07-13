@@ -28,6 +28,7 @@
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:scaleType="fitXY"
+                tools:ignore="ImageContrastCheck"
                 tools:src="@tools:sample/avatars" />
 
             <LinearLayout

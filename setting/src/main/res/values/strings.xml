@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Muhammad Yashlan Iskandar on 7/13/22, 12:42 PM
+  ~ Last modified 7/13/22, 12:42 PM
+  -->
+
+<resources>
+    <string name="title_setting">Setting</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_title">Dark mode</string>
+    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+</resources>

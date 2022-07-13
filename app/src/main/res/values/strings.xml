@@ -8,18 +8,5 @@
     <string name="discover">Discover</string>
     <string name="overview">Overview</string>
     <string name="see_more_details_on_website">See More Details On Website</string>
-    <string name="title_activity_settings">Setting</string>
-
-    <!-- Preference Keys -->
-    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
-
-    <!-- Night Mode Preferences -->
-    <string name="pref_dark_title">Dark mode</string>
-    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
-    <string name="pref_dark_on" translatable="false">on</string>
-    <string name="pref_dark_off" translatable="false">off</string>
-    <string name="dark_mode_auto">Automatic</string>
-    <string name="dark_mode_on">Dark mode</string>
-    <string name="dark_mode_off">Light mode</string>
-
+    <string name="title_setting">Setting</string>
 </resources>
